@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    </head>
+
+    <body>
+    <!--注释:选中内容 Ctrl+/-->
+
+    <!--<h1></h1>—-<h6></h6>
+    随着数字增大文字逐渐变小，字体是加粗的，内置字号，默认占据一行；-->
+
+    <!--<img/>独立标签
+    属性:
+    src：图片地址： 相对路径 （同一个网站）  绝对路径 （不同网站）
+    title：图片标题，光标放在图片上显示标题内容，title属性为全局属性即所有标题都可以使用title
+    width:宽度
+    height:高度
+    border:边框
+    align:对齐方式，代表图片与相邻的文本的相当位置（有三个属性值：top middle bottom）
+    alt:图片的文字说明，图片加载失败时会显示alt内容
+    hspace 和 vspace 设定图片边沿上下左右空白，以免文字或其它图片过于贴近-->
+
+    <!--    <p> 段落 </p>-->
+
+<!--    <div>-->
+<!--        <font>属性： size:设置字体大小-->
+<!--        color:设置字体颜色-->
+<!--        face:设置字体-->
+<!--        </font>-->
+<!--    </div>:块级标签，独占一行，换行-->
+
+<!--    <span></span>:行级标签，所有内容都在同一行-->
+<!--    作用：-->
+<!--    <div></div>:主要是结合css页面分块布局-->
+<!--    <span></span>:进行友好提示信息-->
+
+    <!--<a>文本或图片</a>
+    属性：超链接标签
+    target:告诉浏览器如何跳转，默认跳转替换当前页面，可设置为打开新页面保留当前页面即存在两个页面
+    href:跳转页面的地址(跳转到外网需要添加协议)；
+    锚点跳转：需要id属性标记
+    name/id:名称，锚点(回到锚点: 顶部，底部，中间)，在访问锚点的书写格式:#name的值                        target:_self(自己)  _blank(新页面，之前页面存在)  _parent  _top  默认_self
+    _search相等于给页面起一个名字，如果再次打开时，如果页面存在，则不再打开新的页面。可以是任意名字。-->
+
+    <!--图片引用：绝对路径、相对路径
+    相对路径：./  当前文件夹  ../   上一层目录-->
+
+<!--    有序列表标签：<ol></ol>-->
+<!--    属性：type：1、A、a、I、i（数字、字母、罗马数字）-->
+<!--         start=n  n只能为数字  即从第n个开始计数-->
+<!--    列表项： <li></li>-->
+<!--    示例如下：-->
+<!--    <ol type="I">-->
+<!--        <li>苹果</li>-->
+<!--        <li>香蕉</li>-->
+<!--        <li>橘子</li>-->
+<!--    </ol>-->
+
+
+<!--    无序列表标签： <ul></ul>-->
+<!--    属性：type :三个值，分别为-->
+<!--    circle(空心圆) ,disc(默认,实心圆),square(黑色方块)-->
+<!--    列表项：<li></li>-->
+<!--    示例如下：可嵌套-->
+<!--    <ul type="square">-->
+<!--        <li>苹果</li>-->
+<!--        <li>香蕉</li>-->
+<!--        <li>橘子</li>-->
+<!--    </ul>-->
+
+<!--    换行<br>-->
+<!--    水平线<hr>-->
+
+<!--    超链接下载资源：-->
+<!--    <a href="需要下载链接的地址" target="_blank">点击下载</a>-->
+
+<!--    表格标签-->
+<!--    table：标记区域为表格-->
+<!--    tr：标记一行-->
+<!--    td：标记一个行中的单元格，表格内容写在td中/table date-->
+<!--    th:标记一个行中的单元格，在td的基础上基础且居中-->
+<!--    border：表格的边框-->
+<!--    thead：表格头部-->
+<!--    tbody：表格头部-->
+<!--    tfoot：表格尾部-->
+<!--    caption:表格自带标题-->
+<!--    width/height：宽度和高度  table、tr、td都可以设置-->
+<!--    align：位置 center居中 left居左 right居右 table、tr、td都可以设置 td会覆盖tr tr只改变自身不改变table-->
+<!--    cellpadding：文字和单元格距离-->
+<!--    cellspacing：单元格之间的距离-->
+
+<!--    <table border width="300" height="300" align="center">-->
+<!--        <thead>-->
+<!--        <caption>期末成绩</caption>-->
+<!--        <tr align="center">-->
+<!--            <td></td>-->
+<!--            <td><span>语文</span>-->
+<!--            </td>-->
+<!--            <td>数学</td>-->
+<!--            <td>英语</td>-->
+<!--        </tr>-->
+<!--        </thead>-->
+
+<!--        <tbody>-->
+<!--        <tr align="center">-->
+<!--            <td>张三</td>-->
+<!--            <td>96</td>-->
+<!--            <td>98</td>-->
+<!--            <td>79</td>-->
+<!--        </tr>-->
+<!--        <tr align="center">-->
+<!--            <td>张二</td>-->
+<!--            <td>29</td>-->
+<!--            <td>98</td>-->
+<!--            <td>58</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>张六</td>-->
+           <!-- <td>96</td>
+            <td>28</td>
+            <td>86</td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr>
+            <th>平均</th>
+            <th>23</th>
+            <th>35</th>
+            <th>36</th>
+        </tr>
+        </tfoot>
+    </table>-->
+
+    <!--表单:普通文本框、密码框、单选、多选、下拉框、文件域、颜色选择器、隐藏
+    表单标签：form
+    作用：给服务端提交数据
+    提交到什么地方：action 服务端接口或者html界面或任意域名
+    跳转新页面保留当前页面：target
+    提交方式：method 1.get 2.post-->
+    <!--<form action="https://so.csdn.net/so/search?q=fmt&t=&u=&urw=" target="_blank" method="post">
+        <input type="text" value="admin">    &lt;!&ndash;普通文本框&ndash;&gt;<br>
+        <input type="password" value="123">   &lt;!&ndash;密码框&ndash;&gt;<br>
+        &lt;!&ndash;单选框&ndash;&gt;  &lt;!&ndash;name属性表示某些是同一类&ndash;&gt;  &lt;!&ndash;checked:默认选中&ndash;&gt;
+        性别：<input type="radio" checked name="sex" value="man">男 <input type="radio" name="sex" value="woman">女<input type="radio" name="sex">其他<br>
+        &lt;!&ndash;多选框&ndash;&gt;
+        学历：<input type="checkbox" checked name="1" value="11">小学<input type="checkbox" checked name="1">初中<input type="checkbox" name="1">高中<br>
+        证书：<input type="checkbox" name="2" value="21">一级<input type="checkbox" name="2">二级<input type="checkbox" name="2">三级<br>
+        &lt;!&ndash;下拉框&ndash;&gt;
+        选项：
+        <select name="danxuan">  &lt;!&ndash;selected默认值&ndash;&gt;
+            <option>A</option>
+            <option selected >B</option>
+            <option>C</option>
+        </select><br>
+        选项：
+        <select name="duoxuan" multiple>  &lt;!&ndash;selected默认值&ndash;&gt;
+            <option>A</option>
+            <option selected >B</option>
+            <option>C</option>
+        </select><br>
+        &lt;!&ndash;登录按钮&ndash;&gt;
+        <input type="button" value="登录">
+        <button>登录</button>
+        &lt;!&ndash;提交按钮&ndash;&gt;
+        <input type="submit" value="提交">
+        <button type="submit">提交</button>
+        &lt;!&ndash;重置按钮&ndash;&gt;
+        <input type="reset">
+
+        文件域：<input type="file" name="" id=""><br>
+        颜色选择器：<input type="color"><br>
+        隐藏：<input type="hidden">
+-->
+    登录页面：用户名、密码框、提交按钮、重置按钮
+    提交之后：表格 小说列表页（很多小说）
+    点击table进入小说详情页：简介 目录
+    点击目录，跳转到阅读页
+    </form>
+
+
+
+    </body>
+</html>
