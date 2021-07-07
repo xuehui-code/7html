@@ -1,64 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns: xmlns:>
 <head>
     <meta charset="UTF-8">
-    <title>我的强大全靠你的想象</title>
-
+    <link>
+    <title>Title</title>
     <style>
-        h1{
-            color: gray;
+        html{
+            font: 24px;
+        }
+        body{
             font-size: 36px;
         }
-        h3{
-            color: gray;
-            font-size: 24px;
+        .area1 span{
+            color: green;
         }
-        p{
-            color: gray;
-            font-size: 16px;
+        .font{
+            font-family: '黑体';
+            font-family: 'Calibri','Arial';
+            font-style: italic;
+            font-size: 2rem;  /*指48px*/
+            font-weight: 200;
+        }
+        .text{
+            color: hotpink;
+            color: orangered;
+            color: rgb(226,226,226);
+            /*text-align: center;*/
+            text-decoration: line-through;
+            font-size: 18px;
+            text-indent: 36px;   /*缩进两格18x2*/
+            text-transform: uppercase;  /*全部大写*/
+            /*text-transform: lowercase;   全部小写*/
+            /*text-transform: capitalize;  首字母大写*/
+            display: block;
         }
         a{
-            color: black;
             text-decoration: none;
         }
-        a:visited{
+        a:link{
             color: pink;
+        }
+        a:hover{
+            color: blue;
+            font-size: 72px;
+        }
+        a:visited{
+            color: greenyellow;
+            font-size: 36px;
+        }
+        a:active{
+            color: red;
         }
     </style>
 </head>
 <body>
-<img src="https://bookcover.yuewen.com/qdbimg/349573/1028995969/180">
-<h1>我的强大全靠你的想象</h1><br>
-<h3>简介</h3>
-<p>　　“在您的同学想象中您生命力强大，随手一指可洞穿钢板；想象力转化成功，您的生命力增强、手指增强。”
-    “在您的老师想象中您反应迅速，爆发力强大；想象力转化成功，您的反应力增强，爆发力增强！”
-    “在您的对手想象中您修为深厚，境界深不可测；想象力转化成功，您的修为迅猛提升！”
-    ……
-    秦垣发现，只要有人对他的实力做出想象，他就可以变得强大。
-    于是，秦垣开始尝试以不同手段来激发大家对他进行想象……</p>
-<h3>目录</h3>
-<table border width="800" height="50" align="center">
-    <thead>
-    <caption>正文卷</caption>
-    </thead>
 
-    <tbody>
-    <tr align="center">
-        <td><a href="0101.html" target="_blank">第一章 </a></td>
-        <td><a href="0101.html" target="_blank">第二章 </a></td>
-        <td><a href="0101.html" target="_blank">第三章 </a></td>
-    </tr>
-    <tr align="center">
-        <td><a href="0101.html" target="_blank">第四章 </a></td>
-        <td><a href="0101.html" target="_blank">第五章 </a></td>
-        <td><a href="0101.html" target="_blank">第六章 </a></td>
-    </tr>
-    <tr align="center">
-        <td><a href="0101.html" target="_blank">第七章 </a></td>
-        <td><a href="0101.html" target="_blank">第八章 </a></td>
-        <td><a href="0101.html" target="_blank">第九章 </a></td>
-    </tr>
-    </tbody>
-</table>
+    <!--css:cascading style sheets 层叠样式表
+    css作用：给页面添加效果，颜色、背景、字体、布局、过渡效果、动画
+    css语法
+        选择器（标签选择器、id选择器、类选择器、通配符选择器*）
+        复杂选择器：后代选择器
+        大括号将样式包裹起来，样式重复选最后一个
+    css引入方式：
+        1.行内样式：使用style属性写标签里面
+          优先级最高，复用性差
+        2.内部样式  style标签
+          内部样式写类选择器，复用性强仅限当前文件
+        3.外部样式 link标签引入一个css标签
+          外部样式写类选择器，复用性强，可跨页面使用
+    css优先级：优先级由低到高
+        浏览器自带样式
+        通配符选择器
+        标签选择器
+        类选择器
+        id选择器
+        行内样式
+    -->
+    <h1 style="color: rgb(199,186,126)">hh</h1>
+    <h1 style="color: red";">行内样式优先一级标题</h1>
+    <h2>标签选择器二级标题</h2>
+    <h3 id="level3">id选择器三级标题</h3>
+    <h4 class="level3">类选择器四级标题</h4>
+
+    <!--常用单位
+    字体大小单位：px像素、rem和HTML标签设置的字体大小成正比、
+                em和父元素字体大小成正比、%
+    颜色：1.使用red、blue、yellow
+         2.16进制表示颜色：#00-ff(R)00-ff(G)00-ff(B)
+         3.rgb (0-255,0-255,0-255)
+    宽度高度：% 相对于父元素
+    -->
+    <!--复杂选择器：后代选择器-->
+    <div class="area1">
+        <div class="area1-1">
+            <span>这是span标签</span>
+        </div>
+        <div class="area1-2">
+            <span>这是span标签</span>
+        </div>
+    </div>
+
+    <!--字体：font-family 防止字体失效，设置多个字体，逗号隔开
+    字体倾斜：font-style 默认：normal  倾斜：italic
+    字体粗细：font-weight 100-900 lighter bold bolder
+    -->
+    <div class="font">
+        字体样式
+        this is a div
+    </div>
+
+    <!--文本样式
+    颜色
+    位置  text-align  left默认 center居中 right居右
+    文本修饰text-decoration  line-through文本中线  underline下划线 overline上划线
+    文本缩进text-indent
+    文本转换 针对英文字母 text-transform
+    隐藏一个元素display：none
+    -->
+    <div class="text">
+        文本样式
+        this is a div.
+    </div>
+
+    <a href="https://www.runoob.com/images/serif.gif">超链接没有下划线</a>
+
+    <!--伪类：本来不存在，鼠标点击元素不放开触发
+    -->
+
+    <a href="https://www.runoob.com/images/serif.gif">新链接</a>
 </body>
 </html>
