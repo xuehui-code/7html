@@ -51,6 +51,101 @@
         a:active{
             color: red;
         }
+
+        .box{
+            width:600px;
+            height: 600px;
+            background-color: antiquewhite;  /*背景颜色*/
+            background-image: url("https://img-blog.csdnimg.cn/20200322232559267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0NjAxMTk5,size_16,color_FFFFFF,t_70,image/resize,m_fixed,h_150");   /*背景图片*/
+            background-repeat: repeat-y;
+            /*背景重复no-repeat,水平方向重复repeat-x,垂直方向重复repeat-y*/
+            background-size: 100% 100%;
+            /*第一个百分比是水平方向占比，第二个是垂直方向占比*/
+            background-size: cover;
+            /*高度适应，高度占满不变形cover  宽度适应contain*/
+            background-position: 100px 200px;
+            /*第一个水平方向位移，第二个垂直方向位移*/
+            border: 6px solid red;
+            border-color: red;
+            border-style: solid;
+            border-width: 6px;
+            border-radius: 20px;  /*边框圆角*/
+            border-bottom-style: none;   /*下没有样式*/
+            border-top: 10px solid blue;
+            border-bottom-left-radius: 30px;  /*左下角圆弧*/
+            /*边框 1.边框宽度2.边框样式3.边框颜色
+            style:solid实线、dotted圆点、double双实线、dashed长条形虚线
+            */
+
+        }
+        .box{
+            display: inline-block;
+        }
+        span{
+            /*display
+            block
+            inline
+            inline-block
+            none
+            html元素分类
+            1、块级元素 div li p h1-h6 独占一行自动换行可设宽高
+            2、行内元素 span i u 不自动换行不设宽高
+            3、行内块级元素  不自动换行 可设宽高
+            4、替换元素 img
+            */
+            display: block;
+        }
+        /*伪类
+        a标签：link  ：hover  ：visited  ：active
+        1、第一个元素 ：first-child
+        2.最后一个元素 ：last-child
+        3.第n个元素   :nth-child(3)
+          若括号是n 表所有   2n或even表偶数位  2n+1或odd表奇数位
+        4、：nth-last-child（2）
+           从后往前数第n位
+        5. not(类) 除去该类剩余的元素为某种属性
+        */
+        .list li:first-child{
+            color: red;
+        }
+        .list li:last-child{
+            color: burlywood;
+        }
+        .list li:nth-child(3){
+            color: darkcyan;
+        }
+        li:not(no-color){
+            color: brown;
+        }
+
+        /*伪元素
+        在元素前面和后面添加内容
+        ::before
+        ::after
+        */
+        .list li::before{
+            content: '"';
+        }
+        .list li::after{
+            content: '!!';
+        }
+
+        /*复杂选择器
+        1.后代选择器 父元素 子元素{}    子元素都可选中
+        2.子元素选择器 父元素>子元素{}   直选中直接子元素
+        3.并集选择器  a类和b类
+          .alist,blist{
+               color:red;
+          }
+        4.交集选择器  有a属性且有b属性的类
+          .alist.blist{
+              color:red;
+          }
+        5.兄弟选择器
+          紧跟着的兄弟元素
+          后面所有的同级元素
+        6.父元素选择器
+        */
     </style>
 </head>
 <body>
@@ -128,5 +223,24 @@
     -->
 
     <a href="https://www.runoob.com/images/serif.gif">新链接</a>
+
+    <!--背景-->
+    <div class="box">
+        背景样式
+    </div>
+
+    <span>span标签</span>
+    <img width="200" src="https://img-blog.csdnimg.cn/20200322232559267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0NjAxMTk5,size_16,color_FFFFFF,t_70,image/resize,m_fixed,h_150">
+    <span>span标签</span>
+    <span>span标签</span>
+    <span>span标签</span>
+
+    <u1 class="list">
+        <li>列表项1</li>
+        <li class="no-color">列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+    </u1>
+
 </body>
 </html>

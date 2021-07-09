@@ -2,69 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>开局怒骂女帝昏君</title>
-
+    <title>Title</title>
     <style>
-        h1{
-            color: gray;
-            font-size: 36px;
+        .box1 {
+            height: 100px;
+            width: 600px;
+            background-color: pink;
+            /* float: left; */
         }
-        h3{
-            color: gray;
-            font-size: 24px;
+
+        .box2 {
+            height: 150px;
+            width: 800px;
+            background-color: rgb(214, 38, 67);
         }
-        p{
-            color: gray;
-            font-size: 16px;
+
+        .box3 {
+            height: 200px;
+            width: 400px;
+            background-color: rgb(36, 247, 106);
+            float: left;
         }
-        a{
-            color: black;
-            text-decoration: none;
+
+        .box4 {
+            height: 200px;
+            width: 550px;
+            background-color: rgb(255, 20, 110);
+            float: left;
         }
-        a:visited{
-            color: pink;
+
+        .box5 {
+            height: 200px;
+            width: 500px;
+            background-color: plum;
+            float: left;
+        }
+
+        .clear::after {
+            content: '';
+            display: block;
+            height: 0;
+            overflow: hidden;
+            clear: both;
+        }
+        .nav-list li{
+            float: left;
+            margin-right: 36px;
+            list-style: none;
         }
     </style>
 </head>
-<body>
-<img src="https://bookcover.yuewen.com/qdbimg/349573/1028797510/180">
-<h1>开局怒骂女帝昏君</h1><br>
-<h3>简介</h3>
-<p>周历三十年。
-    穿越而来的陈洛有些烦躁。
-    一位姓左的姑娘老是来他这里蹭饭，关键还问一些当今时代的禁忌。
-    “陈兄，你觉得这天下如何走势？”
-    “陈兄，这是何物，为何能相隔万里伤人？”
-    “陈兄，你觉得陛下这个人怎么样？”
-    问的烦了，陈洛随口道：“陛下乃千年罕见的昏君！”
-    ……
-    直到有一天，一位魔教女子看上了陈洛的才貌，想把他掳走当做压寨相公。
-    成亲当天，千军万马将魔教山寨包围！
-    望着惊呆的陈洛。
-    左姑娘嫣然一笑：“小老弟，我摊牌了，我就是当今陛下。”</p>
-<h3>目录</h3>
-<table border width="800" height="50" align="center">
-    <thead>
-    <caption>正文卷</caption>
-    </thead>
 
-    <tbody>
-    <tr align="center">
-        <td><a href="0201.html" target="_blank">第一章 </a></td>
-        <td><a href="0101.html" target="_blank">第二章 </a></td>
-        <td><a href="0101.html" target="_blank">第三章 </a></td>
-    </tr>
-    <tr align="center">
-        <td><a href="0101.html" target="_blank">第四章 </a></td>
-        <td><a href="0101.html" target="_blank">第五章 </a></td>
-        <td><a href="0101.html" target="_blank">第六章 </a></td>
-    </tr>
-    <tr align="center">
-        <td><a href="0101.html" target="_blank">第七章 </a></td>
-        <td><a href="0101.html" target="_blank">第八章 </a></td>
-        <td><a href="0101.html" target="_blank">第九章 </a></td>
-    </tr>
-    </tbody>
-</table>
+<body>
+<!--
+   标准流布局：
+       在讨论布局的时候，不讨论行内样式span i
+       div,p,li
+       从上而下依次排列，无法产生左右布局
+       table
+   浮动布局：
+       float定义元素浮动left right
+
+       让多个元素在同一行显示（清除了块级元素右边自动补充的外边距）
+       如果一行浮动的内容总宽度超出浏览器最大宽度，最右边的浮动元素会被挤到下一行
+       清除浮动所造成的影响：清除浮动
+       浮动使后面的元素侵占了浮动元素原来的位置，造成页面显示或者布局错乱
+       1.第一种 添加元素
+           本来页面没有元素，为了清除浮动，手动添加一元素
+           <div class="clear"></div>
+           .clear{
+               clear:both;
+           }
+       2.第二章 伪元素
+           .clear::after {
+               content: '';
+               display: block;
+               height: 0;
+               overflow: hidden;
+               clear: both;
+           }
+   定位布局
+-->
+
+<div class="clear">
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+</div>
+<div class="box1">1</div>
+<div class="box2">
+    2
+</div>
+<!-- <div class="clear">
+    <div class="box3">3</div>
+    <div class="box3">3</div>
+    <div class="box3">3</div>
+    <div class="box3">3</div>
+</div> -->
+<ul class="nav-list">
+    <li>首页</li>
+    <li>公司简介</li>
+    <li>产品列表</li>
+    <li>公司地址</li>
+    <li>联系我们</li>
+</ul>
+
 </body>
 </html>

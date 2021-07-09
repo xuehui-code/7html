@@ -2,16 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登录界面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        body{
+            padding: 60px;
+        }
+        .type{
+            width: 120px;
+            /* 单行文本居中 */
+            line-height: 36px;
+            background-color: rgb(20, 20, 20);
+            color: #fff;
+            padding-left: 16px;
+            position: relative;
+            font-size: 14px;
+            /* 平移
+                用法transform: translate(-50px,100px);
+                第一个值是水平方向位移，可以是负值
+                第二个值是垂直方向位移，可以是负值
+                两个值可以用百分比替代
+                和定位相似，原来的位置还存在，不会被其他元素占用
+                结合用法：
+                    实现水平垂直居中
+            */
+            transform: translate(-10%,50%);
+        }
+        .type:hover{
+            font-size: 18px;
+        }
+        .clear::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .type > ul{
+            width: 100%;
+            /* background-color: rgb(102, 102, 102); */
+            background-image: linear-gradient(to bottom right,rgb(150,185,125),rgb(89,197,205));
+            position: absolute;
+            left: 0;
+            display: none;
+        }
+        .type > ul > li {
+            width: 50%;
+            height: 48px;
+            float: left;
+            color: #fff;
+            text-align: center;
+        }
+        .type:hover > ul{
+            display: block;
+        }
+    </style>
+    <!-- 重置css样式
+
+    -->
+    <!-- 样式单调，没有动画效果，过渡效果
+        css3
+        1.背景渐变
+            线性渐变，角度 linear-gradient
+            radial-gradient
+        2.过渡效果
+
+        3.动画效果
+        4.转换
+            缩放
+                scale
+                缩放之后，不影响其他元素位置，可能会被覆盖，也可能覆盖其他元素
+                缩放之后，里面的文字会变小
+                HTML里面，文字最小是12px
+                可以使用scale实现小于12px的字体大小
+            平移
+                translate
+                可以使用平移实现水平垂直居中
+            旋转
+                rotate角度可以是负数
+                建议范围-360deg-360deg
+    -->
+    <style>
+        .box{
+            width: 600px;
+            height: 400px;
+            background-color: aquamarine;
+            margin-top: 60px;
+            /* padding-top: 150px;
+            padding-left: 200px; */
+            /* box-sizing: border-box; */
+            position: relative;
+            /* 旋转 */
+            /* transform: rotate(60deg); */
+            /* 缩放
+
+            */
+            font-size: 12px;
+            transform: scale(0.5);
+        }
+        .box1{
+            /* width: 200px; */
+            /* height: 100px; */
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
 </head>
 <body>
-    <form>
-        <input type="text" name="name" ><br>
-        <input type="password" name="pw"><br>
-        <input type="radio">自动登录<br>
-        <a href="https://aq.yuewen.com/welcome/validateuser">忘记密码</a><br>
-        <button>登录</button>
-    </form>
-
+<div class="type">
+    全部分类
+    <ul class="clear">
+        <li>玄幻</li>
+        <li>言情</li>
+        <li>仙侠</li>
+        <li>仙侠</li>
+        <li>仙侠</li>
+        <li>仙侠</li>
+        <li>仙侠</li>
+    </ul>
+</div>
+<div class="box">
+    <div class="box1">
+        这是要居中的内容
+    </div>
+</div>
+<div class="box">
+    <div class="box1">
+        这是要居中的内容
+    </div>
+</div>
 </body>
 </html>
