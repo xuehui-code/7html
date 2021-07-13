@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 内部脚本 -->
-    <script>
-        // alert('页面加载，弹出提示，内部脚本');
-    </script>
-    <!-- 外部脚本
-        推荐script标签写在body最后.
-    --> 
-    <!-- <script src="./01.js"></script> -->
-    <!-- <script src="./02.js"></script> -->
-    <script src="../easy/ymd.js"></script>
     <title>Document</title>
-    <script src="02.js"></script>
+    <!-- <script src="01.js"></script> -->
+    <!-- <script src="02.js"></script> -->
+    <script src="03.js"></script>
+    <style>
+        #div1{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
-    <!-- 行内脚本 -->
-    <button onclick="alert('点击了按钮')">按钮</button>
+    <!-- <a href="02.html">第二个页面</a>
+    <form action="" method="get">
+        <input type="text" required name="username">
+        <input type="submit">
+    </form> -->
+    <button onclick="fn1()">登录1</button>
+    <button id="btn2">登录2</button>
+    <button id="btn3">登录3</button>
+    
+    <div id="div1">
+        <div id="div2">
+            <span>点击这个div</span>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -2,114 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .box1{
-            width: 300px;
-            height: 300px;
-            background-color: purple;
-            /* position: static; 默认值 */
-            position: relative;
-            left: 200px;
-            top: 20px;
-            /* right: 200px; */
-            /* bottom: 200px; */
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(history.length);
+        function goback(){
+            history.back();
         }
-        .box2{
-            width: 600px;
-            height: 600px;
-            background-color: red;
-            /* position: relative; */
-            top: -100px;
+        function goforward(){
+            history.forward();
         }
-        .box3{
-            width: 400px;
-            height: 400px;
-            background-color: violet;
-            position: absolute;
-            top: 100px;
+        function go(num){
+            history.go(num)
         }
-        .circle{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: yellow;
-            position: fixed;
-            right: 60px;
-            bottom: 100px;
-        }
-        .clear::after {
-            content: '';
-            display: block;
-            height: 0;
-            overflow: hidden;
-            clear: both;
-        }
-        .type{
-            height: 36px;
-            line-height: 36px;
-            padding: 12px;
-            background-color: black;
-            color: #fff;
-            width: 100px;
-            position: relative;
-        }
-        .type:hover>.type-list{
-            display: block;
-        }
-        .type-list{
-            list-style: none;
-            width: 124px;
-            background-color: blue;
-            display: none;
-            margin: 0;
-            position: absolute;
-            left: 0;
-            /* top: 0; */
-        }
-        .type-list:hover{
-            display: block;
-        }
-        .type-list li{
-            float: left;
-            width: 50px;
-            height: 40px;
-        }
-    </style>
+    </script>
 </head>
-
-<!-- 定位布局
-    可以让两个元素重叠
-    position: static relative absolute fixed
-    相对定位：relative 相对于元素自身进行偏移
-    绝对定位：absolute
-        如果祖先元素设置了某个定位方式（相对定位），那么该元素相对于设置了定位的祖先元素进行偏移
-        如果所有的祖先元素都没有设置定位，该元素会相对于，浏览器的窗口进行定位
-    绝对定位（固定定位）：fixed
-        始终相对于浏览器窗口进行定位
-    过渡效果 动画 转换
--->
-<!-- <div class="box1">
-
-</div> -->
-
-<div class="circle">
-    回到顶部
-</div>
-<div class="type">作品分类
-    <ul class="type-list clear">
-        <li>玄幻</li>
-        <li>修仙</li>
-        <li>都市</li>
-        <li>仙侠</li>
-        <li>言情</li>
-        <li>武侠</li>
-        <li>游戏</li>
-        <li>历史</li>
-    </ul>
-</div>
-
 <body>
-
+    <a href="04.html">点击去第四个页面</a>
+    <button onclick="goback()">点击返回上一页</button>
+    <button onclick="goforward()">点击去下一页</button>
+    <button onclick="go(0)">刷新</button>
+    <button onclick="go(-1)">点击返回上一页</button>
+    <button onclick="go(1)">点击去下一页</button>
 </body>
 </html>

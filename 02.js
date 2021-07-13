@@ -1,145 +1,97 @@
+// 关于引用类型注意点
 /**
- * javascript数据类型
- * 1. Number 包含整数和浮点数
- * 2. 字符串 用单引号或者双引号包裹，不区分字符和字符串
- * 3. 布尔值 true或者false
- * 4. undefined 表示变量定义未声明，只有一个值undefined，指向内存空间
- * 5. null 只有一个值null。表示不指向内存空间
- * 6. 对象类型 由一组基本类型或者对象类型组成
- * 7. Function类型 函数，代码块
+ * 基本数据类型和对象类型
+ * 基本数据类型，数据直接存储在栈
+ * 对象类型，数据存储在堆，堆的地址存储在栈里面，变量存储的是堆的地址
+ * 两个对象存储的是同一个堆的不同栈的引用
+ * 浅拷贝：js里面所有对象的赋值操作都是浅拷贝
+ * 深拷贝：通过递归循环将对象赋给另一个对象
  */
-
-// var num = 18;
-// num = 9.99;
-
-// var str = 'this is a string';
-// str = 't';
-// str = "i";
-
-// var bool = true;
-// bool = false;
-
-// var und = undefined;
-// var noData;
-
-// var n = null;
-
-// 所有复杂类型，都是对象，比如数组就是对象
-// var obj = {};
-// var arr = [];
-/**
- * 数据类型的检查：
- * 1.基本类型检查 typeof
- * 2.复杂类型检查 instanceof
- */
-
-// console.log(typeof num); // number 不区分浮点数和整数
-// console.log(typeof str); // string 不区分字符和字符串
-// console.log(typeof bool); // boolean true||false
-// console.log(typeof und,typeof n); // undefined object
-// console.log(typeof obj,typeof arr); // object object
-
-// console.log(obj instanceof Object);
-// console.log(arr instanceof Array);
-
-/**
- * 数据类型转换
- * 变量在重复赋值过程中，因为值类型的不同，导致变量最终类型改变
- * 隐式转换：字符串->数值 数值->字符串 数值 -> boolean ...
- * 3*2 = 6
- * 判断语句，运算语句（+）+可以用来拼接两个字符串，会产生很多隐式转换
- * 显式转换：通过String、Number、Boolean等关键字进行强制转换、parseInt和parseFloat必须以数值开头
- * '123' => 123
- * '123abc' => 123
- */
-
-var num = 9;
-// num = String('string');
-console.log(num+'a'); // number
-
-num = 'number';
-console.log(typeof num); // string
-
-num = false;
-console.log(typeof num); // boolean
-
-num = 100 - num; // 隐式转换，在运算过程中，true转换成了1,false转换成了0
-var age = 0;
-// 1被if转换成了true，0被转换成了false
-if(age){
-    alert('我出生了')
-}
-console.log(parseInt('123abc')); // 123
-console.log(parseInt('abc123')); // NaN not a number
-
-/**
- * 运算符：
- * 1.赋值运算符 = (+= -= *= /=)
- *  赋值运算通过=实现向变量赋值,将=右边值赋给左边，通过格式为 变量名 = 常量｜变量｜表达式｜函数; 
- *  num = xxx;
- * 2.算术运算符 + - * / %
- *  + 两边都是数值，数值相加，有一个边是字符串，会拼接字符串
- *  -* /都是数学运算
- *  % 取余
- *  自增++自减-- 自身加或者减1，运算完不需要赋值，自身会改变，只能用在数值上
- *  自增符号可以放在变量前面，也可以放在后面，放在前面优先级高，先运算再使用
- * 3.关系运算符 > < >= <= == != === !==
- *  两个值的比较，返回结果为true|false
- * 4.逻辑运算符
- * 条件比较多时，需要将多个条件合并成一个条件，这时需要逻辑运算符，最终结果依然true|false
- *      逻辑与 && 只有两边都为true结果才会是true，
- *      多个&&情况下，从最左边开始，遇到第一个false结束运算，返回false
- * 
- *      逻辑或 || 只要有一个值为true直接返回true
- *      多个||情况下，从最左边开始，遇到第一个true结束运算，返回true
- *      与短路和或短路
- * 
- *      逻辑非， 取反,不会修改原来的值
- * 
- *      运算符优先级: ! > 算术 > 关系 > && > || > 赋值, 通过小括号改变运算顺序
- */
-
-// js运算缺陷，进制问题，如果出现小数循环，乘以一个很大的数，运算结束，再除掉
-// var a = 0.1 + 0.2;
-// var a = (0.1*1000000 + 0.2*1000000)/1000000;
-
-var b = 1 + 'abc';
-// console.log(a);
-
-// 取余
-var c = 7%5;
-console.log(c);
-
-// ++ -- 
-var c = 1;
-console.log(++c);
-console.log(++c);
-console.log(c++);
-console.log(c);
-
-// += -= *= /= %=
-var a = 12;
-a -= 12; // a = a+12;
-// a -= 12; // a = a112;
-console.log(a);
-
-// 关系运算符
-a = 12;
-b = '12'
-c = 11;
-console.log(a > c);
-// console.log(a > b);
-console.log(a == b); // true ==不会判断数据类型
-console.log(a === b); // false 严格等于，先判断数据类型，再判断具体的数值
-var d = a == b;
-var e = a > c;
-a == b&&a>c
-// if(d){
-//     if(e){
-
-//     }
+// var obj1 = {
+//     name: '张三',
+//     age: 16
 // }
 
-true || console.log('打印一句话');
+// var obj2 = obj1;
+// console.log(obj1,obj2);
+// obj2.name = '李四';
+// obj1.age = 24;
+// console.log(obj1,obj2);
 
-console.log(!false);
+/**
+ * BOM：浏览器对象模型
+ * 1.操作浏览器窗口: window
+ * 2.操作HTML元素(标签、属性)：document DOM
+ * 3.操作URL（地址栏中访问地址）: location
+ * 4.操作访问过的历史记录: history
+ */
+
+/**
+ * window对象：浏览器窗口，js顶级对象
+ * 全局变量，函数都在window对象里面
+ * window对象上的方法和部分属性，可以直接使用，无需使用window.来标识
+ * 常用的方法：
+ * 对话框：alert弹出提示框 prompt弹出输入框 confirm弹出确认框
+ * 窗口：open打开新窗口，close关闭窗口，close只能关闭由open打开的窗口
+ * 定时器：1.按特定时间来执行特定任务, 隔一段时间执行一次JS代码 2.在特定时间结束后执行一次
+ * setInterval 定时器需要手动停止，否则会无限循环,定时器会返回一个id,如果不清除定时器，可能会造成内存泄露
+ * setTimeout 只会执行一次，在指定时间结束之后执行
+ * 
+ * window的成员可以不用带window前缀
+ */
+
+var a1 = '测试全局变量';
+var a2 = function(){
+    console.log('打印全局变量');
+}
+console.log(window);
+
+// window.confirm('弹出一句话')
+
+// var info = window.open('https://www.jd.com');
+// console.log(id);
+// window.close(info)
+
+var flag = 0;
+
+function fn(){
+    console.log('两秒后执行一次',flag,timer);
+    flag++;
+}
+
+// var timer = setInterval(fn(),1000); // var timer = setInterval(undefined,1000)
+var timer = setInterval(fn,1000)
+
+clearInterval(timer)
+
+var timer2 = setTimeout(function(){
+    console.log('三年之期已到，请龙王归位');
+},3000)
+
+clearTimeout(timer2)
+
+/**
+ * Location
+ * http://1.117.166.129:999/
+ * 999是端口号
+ * https://www.runoob.com/jsref/obj-location.html
+ */
+console.log(location);
+/**
+ * 打开一个新页面：
+ * 超链接、表单
+ * window.open
+ * location.assign location.replace location.href = 'xxx'
+ */
+// location.assign('https://www.baidu.com');
+// location.replace('https://www.baidu.com');
+// location.href = "https://www.baidu.com";
+// 通常用来刷新页面
+// location.reload();
+/**
+ * history对象：保存和操作用户（在浏览器窗口中）访问过的 URL
+ * history.length表示存储过的url的数量
+ * history.back history.forward history.go
+ * 可以使用go实现back和forward方法
+ */
+

@@ -5,99 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
-    <style>
-        /* 过渡
-            从一个状态转换为另一个状态一个过程
-            transition: 需要转换的属性 转换持续时间 时间曲线 转换延迟
-            transition-property
-            transition-duration
-            transition-timing-function
-            transition-delay
-        */
-        /* 动画
-            动画通常用在网页初次加载的时候
-            @keyframes 动画名称{
-                0%{}
-                100%{}
-            }
-            animation: 动画名称 动画持续时间 动画时间曲线 动画延迟时间
-            animation-property
-            animation-duration
-            animation-timing-function
-            animation-delay
-            animation-fill-mode: forwards
-         */
-        ul{
-            margin: 100px 0 0 100px;
-            animation: fade-out 5s linear infinite 1s;
-            opacity: 1;
-        }
-        ul>li{
-            float: left;
-            line-height: 36px;
-            background-color: black;
-            color: #fff;
-            margin-right: 18px;
-            width: 120px;
-            text-align: center;
-            box-sizing: border-box;
-            transition: background-color .2s, color .2s,padding-left .2s .2s,transform .2s;
-        }
-        ul>li:hover{
-            background-color: #fff;
-            box-sizing: border-box;
-            color: #000;
-            border: 1px solid #000;
-            padding-left: 18px;
-            /* transform: scale(2); */
-        }
-        .clear::after{
-            content: '';
-            display: block;
-            clear: both;
-        }
-        @keyframes fade-in {
-            from{
-                /* 从透明 */
-                opacity: 0;
-                /* .... */
-            }
-            to{
-                opacity: 1;
-                /* .... */
-            }
-        }
-        @keyframes fade-out {
-            0%{
-                /* 从透明 */
-                opacity: 1;
-                /* .... */
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 1;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-                /* .... */
-            }
-        }
-    </style>
+    <script>
+        console.log(history.length);
+    </script>
 </head>
 <body>
-<ul class="clear">
-    <li>玄幻</li>
-    <li>仙侠</li>
-    <li>都市</li>
-    <li>悬疑</li>
-    <li>战争</li>
-    <li>刑侦</li>
-</ul>
+    第4个页面
 </body>
 </html>
